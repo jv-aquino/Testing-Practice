@@ -1,0 +1,29 @@
+{
+  "name": "testing-practice",
+  "version": "1.0.0",
+  "description": "JavaScript TDD practice with the Jest framework.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jv-aquino/Testing-Practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jv-aquino/Testing-Practice/issues"
+  },
+  "homepage": "https://github.com/jv-aquino/Testing-Practice#readme",
+  "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.20.2",
+    "babel-jest": "^29.3.1",
+    "jest": "^29.3.1"
+  },
+  "dependencies": {
+    "jest-runner-groups": "^2.2.0"
+  }
+}
