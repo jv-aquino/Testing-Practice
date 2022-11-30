@@ -20,7 +20,18 @@ const reverse = (str) => {
     return str;
   }
   
-  return str;
+  str = str.split('');
+
+  for (let i = 0, j = str.length - 1; i < Math.floor(str.length / 2); i++, j--) {
+    let letter = str[i];
+    let exchangeLetter = str[j];
+
+    str[i] = exchangeLetter;
+
+    str[j] = letter;
+  }
+  
+  return str.join("");
 }
 
 const calculator = (() => {

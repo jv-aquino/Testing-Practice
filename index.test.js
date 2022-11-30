@@ -14,7 +14,7 @@ describe.skip("Capitalize", () => {
   });
 });
 
-describe.skip("Reverse", () => {
+describe("Reverse", () => {
   test("Single Word", () => {
     expect(reverse("abc")).toBe("cba");
   });
@@ -26,7 +26,7 @@ describe.skip("Reverse", () => {
   });
 });
 
-describe("Calculator", () => {
+describe.skip("Calculator", () => {
   test("Add - Positve numbers", () => {
     expect(calculator.add(2.5, 8)).toBe(10.5);
   });
