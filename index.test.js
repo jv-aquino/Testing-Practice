@@ -72,11 +72,27 @@ describe.skip("Calculator", () => {
   });
 });
 
-describe.skip("Caesar Cipher", () => {
+describe("Caesar Cipher", () => {
+  test("Lowercase", () => {
+    expect(caesar("lorem ipsum dolor sit amet", 6)).toBe("ruxks ovyas jurux yoz gskz");
+  });
+  test("Uppercase", () => {
+    expect(caesar("LOREM IPSUM DOLOR SIT AMET", 28)).toBe("NQTGO KRUWO FQNQT UKV COGV");
+  });
 
+  test("Mixed - Positive key", () => {
+    expect(caesar("LorEm IpsuM DoloR SiT AmeT", 10)).toBe("VybOw SzceW NyvyB CsD KwoD");
+  });
+  test("Mixed - Negative key", () => {
+    expect(caesar("LorEm IpsuM DoloR SiT AmeT", -35)).toBe("CfiVd ZgjlD UfcfI JzK RdvK");
+  });
+
+  test("Null string", () => {
+    expect(caesar("", 5)).toBe("");
+  });
 });
 
-describe("Analyze Array", () => {
+describe.skip("Analyze Array", () => {
   test("Positive integers", () => {
     expect(analyze([1, 8, 3, 4, 2, 6])).toMatchObject({
       average: 4,

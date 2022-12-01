@@ -50,8 +50,43 @@ const calculator = (() => {
   return {add, subtract, divide, multiply}
 })();
 
-const caesarCipher = (str) => {
+const caesarCipher = (str, key) => {
+  if (str.length == 0) {
+    return str;
+  }
 
+  if (key >= 0) {
+    key = key % 26;
+  } else {
+    key = key % -26;
+  }
+
+  let minLimit = 65;
+  let maxLimit = 90;
+
+  str = str.split("");
+
+  str.forEach((char, i) => {
+    if (char == char.toUpperCase() && char == char.toLowerCase()) {
+      return;
+    }
+
+    let code = char.charCodeAt(0);
+    code += key;
+
+    if (char == char.toLowerCase()) {
+      code = (code > maxLimit + 32) ? code - 26 : code;
+      code = (code < minLimit + 32) ? code + 26 : code;
+    }
+    else {
+      code = (code > maxLimit) ? code - 26 : code;
+      code = (code < minLimit) ? code + 26 : code;
+    }
+
+    str[i] = String.fromCharCode(code);
+  });
+
+  return str.join("");
 }
 
 const analyzeArray = (arr) => {
