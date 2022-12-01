@@ -50,4 +50,36 @@ const calculator = (() => {
   return {add, subtract, divide, multiply}
 })();
 
-module.exports = {capitalize, reverse, calculator};
+const caesarCipher = (str) => {
+
+}
+
+const analyzeArray = (arr) => {
+  if (arr.length == 0 || !Array.isArray(arr)) {
+    throw new Error("The parameters must be an array of numbers");
+  }
+  else if (arr.every(item => typeof item != "number")) {
+    throw new Error("The array must contain only numbers");
+  }
+
+  let stats = {
+    average: null,
+    min: null,
+    max: null,
+    length: arr.length
+  }
+
+  stats.average = arr.reduce((sum, cur) => sum + cur, 0) / stats.length;
+  stats.min = Math.min(...arr);
+  stats.max = Math.max(...arr);
+
+  return stats;
+}
+
+module.exports = {
+  capitalize, 
+  reverse, 
+  calculator, 
+  caesarCipher, 
+  analyzeArray
+};

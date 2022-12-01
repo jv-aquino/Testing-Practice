@@ -1,6 +1,8 @@
 const capitalize = require("./index").capitalize;
 const reverse = require("./index").reverse;
 const calculator = require("./index").calculator;
+const caesar = require("./index").caesarCipher;
+const analyze = require("./index").analyzeArray;
 
 describe.skip("Capitalize", () => {
   test("Single Word", () => {
@@ -14,7 +16,7 @@ describe.skip("Capitalize", () => {
   });
 });
 
-describe("Reverse", () => {
+describe.skip("Reverse", () => {
   test("Single Word", () => {
     expect(reverse("abc")).toBe("cba");
   });
@@ -68,4 +70,34 @@ describe.skip("Calculator", () => {
   test("Multiply - Zero", () => {
     expect(calculator.multiply(-123, 0)).toBe(0);
   });
-})
+});
+
+describe.skip("Caesar Cipher", () => {
+
+});
+
+describe("Analyze Array", () => {
+  test("Positive integers", () => {
+    expect(analyze([1, 8, 3, 4, 2, 6])).toMatchObject({
+      average: 4,
+      min: 1,
+      max: 8,
+      length: 6
+    });
+  });
+  test("Mixed floats", () => {
+    expect(analyze([-1.6, 6, 2.3, -5, 7.8, 4.0])).toMatchObject({
+      average: 2.25,
+      min: -5,
+      max: 7.8,
+      length: 6
+    });
+  });
+
+  test("Empty array", () => {
+    expect(() => analyze([])).toThrow(Error);
+  });
+  test("Not an array", () => {
+    expect(() => analyze(45)).toThrow(Error);
+  });
+});
